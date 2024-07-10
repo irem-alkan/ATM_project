@@ -18,9 +18,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
     <PackageReference Include="Swashbuckle.AspNetCore.Annotations" Version="6.6.2" />
-    <!-- Yeni paket referanslarını buraya ekleyebilirsiniz -->
-    <!-- Örneğin: -->
-    <!-- <PackageReference Include="PackageName" Version="X.X.X" /> -->
+   
 	   </ItemGroup>
 
 	
