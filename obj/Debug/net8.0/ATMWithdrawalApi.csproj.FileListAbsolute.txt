@@ -1,0 +1,7 @@
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.csproj.AssemblyReference.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.AssemblyInfoInputs.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.AssemblyInfo.cs
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.csproj.CoreCompileInputs.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATMWithdrawalApi.MvcApplicationPartsAssemblyInfo.cache

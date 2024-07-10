@@ -1,0 +1,19 @@
+{
+  "Version": 1,
+  "Hash": "Q4td0Yz9s7+4fowlxKxE5TKVgRFbKF7Rz//T0tOLczQ=",
+  "Source": "ATM_project",
+  "BasePath": "_content/ATM_project",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "ATM_project\\wwwroot",
+      "Source": "ATM_project",
+      "ContentRoot": "C:\\Users\\alkan\\source\\repos\\ATM_project\\wwwroot\\",
+      "BasePath": "_content/ATM_project",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": []
+}
