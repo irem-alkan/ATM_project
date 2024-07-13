@@ -6,6 +6,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
+using Swashbuckle.AspNetCore.SwaggerUI;
 
 namespace ATM_project
 {
@@ -20,18 +21,27 @@ namespace ATM_project
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin()
+                               .AllowAnyMethod()
+                               .AllowAnyHeader();
+                    });
+            });
+
+            services.AddControllers();
+
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddControllersWithViews();
 
             // Swagger services configuration
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v2", new OpenApiInfo { Title = "My API", Version = "v2" });
             });
-
-            // Add other services configuration
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -44,6 +54,7 @@ namespace ATM_project
                 {
                     c.SwaggerEndpoint("/swagger/v2/swagger.json", "My API V2");
                     c.RoutePrefix = string.Empty;
+                    c.DocExpansion(DocExpansion.List);
                 });
             }
             else
@@ -57,15 +68,14 @@ namespace ATM_project
 
             app.UseRouting();
 
+            app.UseCors("AllowAllOrigins"); // Allow CORS policies
+
             app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-
+                endpoints.MapControllers();
                 endpoints.MapFallbackToController("Index", "Home");
             });
         }

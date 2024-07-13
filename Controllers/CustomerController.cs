@@ -1,9 +1,10 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
-using ATM_project.Models;
-using System.Threading.Tasks;
-using ATMWithdrawalApi.Models;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using ATM_project.Models;
+using ATMWithdrawalApi.Models;
 
 namespace ATM_project.Controllers
 {
@@ -12,19 +13,48 @@ namespace ATM_project.Controllers
     public class CustomerController : ControllerBase
     {
         private readonly ApplicationDbContext _context;
-        private readonly ILogger<CustomerController> _logger;
-        private readonly ApplicationDbContext _dbContext;
-        public CustomerController(ApplicationDbContext dbContext, ApplicationDbContext context, ILogger<CustomerController> logger)
+
+        public CustomerController(ApplicationDbContext context)
         {
-            _dbContext = dbContext;
             _context = context;
-            _logger = logger;
         }
 
-        [HttpPost("save")]
-        [ProducesResponseType(typeof(Customer), 200)]
-        [ProducesResponseType(400)]
-        public async Task<IActionResult> SaveCustomer([FromBody] Customer customer)
+        // GET: api/Customer
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
+        {
+            var customers = await _context.Customers
+                .Include(c => c.Accounts)
+                .Include(c => c.CustomerRelations)
+                .Include(c => c.CustomerJobs)
+                .Include(c => c.DebtPayments)
+                .ToListAsync();
+
+            return Ok(customers);
+        }
+
+        // GET: api/Customer/5
+        [HttpGet("{ID_Customer}")]
+        public async Task<ActionResult<Customer>> GetCustomer(long ID_Customer)
+        {
+            var customer = await _context.Customers
+                .Include(c => c.Accounts)
+                .Include(c => c.CustomerRelations)
+                .Include(c => c.CustomerJobs)
+                .Include(c => c.DebtPayments)
+                .FirstOrDefaultAsync(c => c.ID_Customer == ID_Customer);
+
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(customer);
+        }
+
+        // POST: api/Customer
+        [HttpPost]
+        public async Task<ActionResult<Customer>> CreateCustomer(Customer customer)
         {
             if (!ModelState.IsValid)
             {
@@ -34,7 +64,59 @@ namespace ATM_project.Controllers
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
-            return Ok(customer);
+            return CreatedAtAction(nameof(GetCustomer), new { ID_Customer = customer.ID_Customer }, customer);
+        }
+
+        // PUT: api/Customer/5
+        [HttpPut("{ID_Customer}")]
+        public async Task<IActionResult> UpdateCustomer(long ID_Customer, Customer customer)
+        {
+            if (ID_Customer != customer.ID_Customer)
+            {
+                return BadRequest();
+            }
+
+            _context.Entry(customer).State = EntityState.Modified;
+
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException)
+            {
+                if (!CustomerExists(ID_Customer))
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    throw;
+                }
+            }
+
+            return NoContent();
+        }
+
+        // DELETE: api/Customer/5
+        [HttpDelete("{ID_Customer}")]
+        public async Task<IActionResult> DeleteCustomer(long ID_Customer)
+        {
+            var customer = await _context.Customers.FindAsync(ID_Customer);
+            if (customer == null)
+            {
+                return NotFound();
+            }
+
+            _context.Customers.Remove(customer);
+            await _context.SaveChangesAsync();
+
+            return NoContent();
+        }
+
+        private bool CustomerExists(long ID_Customer)
+        {
+            return _context.Customers.Any(e => e.ID_Customer == ID_Customer);
         }
     }
 }
+

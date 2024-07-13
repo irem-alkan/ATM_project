@@ -1,3 +1,11 @@
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.csproj.AssemblyReference.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.AssemblyInfoInputs.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.AssemblyInfo.cs
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.csproj.CoreCompileInputs.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.sourcelink.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\appsettings.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\package-lock.json
@@ -121,13 +129,6 @@ C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\runtimes\win\lib\net6.0
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.csproj.AssemblyReference.cache
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.AssemblyInfoInputs.cache
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.AssemblyInfo.cs
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.csproj.CoreCompileInputs.cache
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.MvcApplicationPartsAssemblyInfo.cache
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\staticwebassets.development.json
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\staticwebassets\msbuild.ATM_project.Microsoft.AspNetCore.StaticWebAssets.props
@@ -142,5 +143,3 @@ C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\refint\ATM_project.dll
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.pdb
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ATM_project.genruntimeconfig.cache
 C:\Users\alkan\source\repos\ATM_project\obj\Debug\net8.0\ref\ATM_project.dll
-C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\build\asset-manifest.json
-C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\build\manifest.json
