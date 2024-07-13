@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using ATM_project.Models; // Customer sınıfı bu namespace içinde
 
 namespace ATMWithdrawalApi.Models
 {

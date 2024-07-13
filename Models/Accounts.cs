@@ -1,6 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using ATM_project.Models; // Customer sınıfının namespace'i
 
 namespace ATMWithdrawalApi.Models
 {

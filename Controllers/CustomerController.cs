@@ -3,7 +3,6 @@ using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using ATM_project.Models;
 using ATMWithdrawalApi.Models;
 
 namespace ATM_project.Controllers
