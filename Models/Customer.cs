@@ -6,17 +6,13 @@ namespace ATMWithdrawalApi.Models
 {
     public class Customer
     {
+        [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-
-        public long id { get; set; }
+        public int Id { get; set; }
 
         [Required(ErrorMessage = "Customer Type is required")]
         public string CustomerType { get; set; } = string.Empty;
-
-        [Key]
-        [Required]
-        public long ID_Customer { get; set; }
-
+        
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; } = string.Empty;
 
@@ -25,9 +21,9 @@ namespace ATMWithdrawalApi.Models
 
         public decimal? NetIncomeAmount { get; set; }
 
-        public ICollection<Accounts>? Accounts { get; set; }
-        public ICollection<DebtPayments>? DebtPayments { get; set; }
-        public ICollection<CustomerJob>? CustomerJobs { get; set; }
-        public ICollection<CustomerRelation>? CustomerRelations { get; set; }
+        //public ICollection<Accounts>? Accounts { get; set; }
+       //public ICollection<DebtPayments>? DebtPayments { get; set; }
+       // public ICollection<CustomerJob> CustomerJobs { get; set; }
+        //public ICollection<CustomerRelation>? CustomerRelations { get; set; }
     }
 }

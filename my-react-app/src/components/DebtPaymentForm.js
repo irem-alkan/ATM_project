@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿{/*import React, { useState } from 'react';
 import axios from 'axios';
 
 const CustomerRelationForm = ({ customerId }) => {
@@ -49,7 +49,6 @@ const CustomerRelationForm = ({ customerId }) => {
                 <button type="submit">Add Relation</button>
             </form>
 
-            {/* İlişki listesi */}
             <div>
                 <h2>Relations:</h2>
                 {relations.map((relation, index) => (
@@ -64,4 +63,4 @@ const CustomerRelationForm = ({ customerId }) => {
     );
 };
 
-export default CustomerRelationForm;
+export default CustomerRelationForm;*/}

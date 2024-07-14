@@ -1,4 +1,4 @@
-﻿import React, { useState } from 'react';
+﻿{/*import React, { useState } from 'react';
 import axios from 'axios';
 
 const CustomerJobForm = ({ customerId }) => {
@@ -83,7 +83,7 @@ const CustomerJobForm = ({ customerId }) => {
                 <button type="submit">Add Job</button>
             </form>
 
-            {/* İş listesi */}
+            
             <div>
                 <h2>Jobs:</h2>
                 {jobs.map((job, index) => (
@@ -101,4 +101,4 @@ const CustomerJobForm = ({ customerId }) => {
     );
 };
 
-export default CustomerJobForm;
+export default CustomerJobForm;*/}

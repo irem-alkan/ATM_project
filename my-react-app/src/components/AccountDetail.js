@@ -1,4 +1,4 @@
-﻿import React, { useEffect, useState } from 'react';
+﻿{/*import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 
 const AccountDetail = ({ ID_Account }) => {
@@ -45,4 +45,4 @@ const AccountDetail = ({ ID_Account }) => {
     );
 };
 
-export default AccountDetail;
+export default AccountDetail;*/}

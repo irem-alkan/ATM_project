@@ -23,25 +23,25 @@ namespace ATM_project.Controllers
         public async Task<ActionResult<IEnumerable<Customer>>> GetCustomers()
         {
             var customers = await _context.Customers
-                .Include(c => c.Accounts)
-                .Include(c => c.CustomerRelations)
-                .Include(c => c.CustomerJobs)
-                .Include(c => c.DebtPayments)
+                //.Include(c => c.Accounts)
+               // .Include(c => c.CustomerRelations)
+                //.Include(c => c.CustomerJobs)
+               // .Include(c => c.DebtPayments)
                 .ToListAsync();
 
             return Ok(customers);
         }
 
         // GET: api/Customer/5
-        [HttpGet("{ID_Customer}")]
-        public async Task<ActionResult<Customer>> GetCustomer(long ID_Customer)
+        [HttpGet("{customerId}")]
+        public async Task<ActionResult<Customer>> GetCustomer(int customerId)
         {
             var customer = await _context.Customers
-                .Include(c => c.Accounts)
-                .Include(c => c.CustomerRelations)
-                .Include(c => c.CustomerJobs)
-                .Include(c => c.DebtPayments)
-                .FirstOrDefaultAsync(c => c.ID_Customer == ID_Customer);
+               // .Include(c => c.Accounts)
+                //.Include(c => c.CustomerRelations)
+               // .Include(c => c.CustomerJobs)
+               // .Include(c => c.DebtPayments)
+                .FirstOrDefaultAsync(c => c.Id == customerId);
 
             if (customer == null)
             {
@@ -63,14 +63,14 @@ namespace ATM_project.Controllers
             _context.Customers.Add(customer);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction(nameof(GetCustomer), new { ID_Customer = customer.ID_Customer }, customer);
+            return CreatedAtAction(nameof(GetCustomer), new { customerId = customer.Id }, customer);
         }
-
+/*
         // PUT: api/Customer/5
         [HttpPut("{ID_Customer}")]
         public async Task<IActionResult> UpdateCustomer(long ID_Customer, Customer customer)
         {
-            if (ID_Customer != customer.ID_Customer)
+            if (ID_Customer != customer.Id)
             {
                 return BadRequest();
             }
@@ -115,7 +115,8 @@ namespace ATM_project.Controllers
         private bool CustomerExists(long ID_Customer)
         {
             return _context.Customers.Any(e => e.ID_Customer == ID_Customer);
-        }
+        }*/
     }
 }
 
+      

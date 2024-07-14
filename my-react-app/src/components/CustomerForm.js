@@ -1,34 +1,34 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const CustomerForm = () => {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [customerIdNumber, setCustomerIdNumber] = useState('');
-    const [netIncomeAmount, setNetIncomeAmount] = useState('');
-    const [message, setMessage] = useState(null); // Mesaj durumu
+    const [Name, setName] = useState('');
+    const [Surname, setSurname] = useState('');
+    const [CustomerType, setCustomerType] = useState('');
+    const [NetIncomeAmount, setNetIncomeAmount] = useState('');
+    const [message, setMessage] = parseFloat(null); 
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.post('/api/customers', {
-                Name: firstName,
-                Surname: lastName,
-                CustomerType: 'Default',
-                ID_Customer: customerIdNumber, // ID_Customer olarak güncellendi
-                NetIncomeAmount: netIncomeAmount || null
+            const response = await axios.post('/api/Customer', {
+                Name: Name,
+                Surname: Surname,
+                CustomerType: CustomerType,
+                NetIncomeAmount: Number(NetIncomeAmount),
             });
             console.log(response.data);
-            setMessage('Customer saved successfully!'); // Başarı mesajı
-            // Formu sıfırlayın
-            setFirstName('');
-            setLastName('');
-            setCustomerIdNumber('');
+            setMessage('Customer saved successfully!');
+            
+            setName('');
+            setSurname('');
+            setCustomerType('');
             setNetIncomeAmount('');
         } catch (error) {
-            console.error(error);
-            setMessage('Failed to save customer.'); // Hata mesajı
+            console.error('Error details:', error);
+            setMessage('Failed to save customer.');
         }
+        
     };
 
     return (
@@ -37,8 +37,8 @@ const CustomerForm = () => {
                 <label>First Name:</label>
                 <input
                     type="text"
-                    value={firstName}
-                    onChange={(e) => setFirstName(e.target.value)}
+                    value={Name}
+                    onChange={(e) => setName(e.target.value)}
                     placeholder="First Name"
                     required
                 />
@@ -47,36 +47,33 @@ const CustomerForm = () => {
                 <label>Last Name:</label>
                 <input
                     type="text"
-                    value={lastName}
-                    onChange={(e) => setLastName(e.target.value)}
+                    value={Surname}
+                    onChange={(e) => setSurname(e.target.value)}
                     placeholder="Last Name"
                     required
                 />
             </div>
             <div>
-                <label>ID Number:</label>
+                <label>Customer Type:</label>
                 <input
                     type="text"
-                    value={customerIdNumber}
-                    onChange={(e) => setCustomerIdNumber(e.target.value)}
-                    placeholder="ID Number"
-                    pattern="\d{0,11}"
-                    title="Please enter up to 11 digits"
-                    required
+                    value={CustomerType}
+                    onChange={(e) => setCustomerType(e.target.value)}
+                    placeholder="Customer Type"
                 />
             </div>
             <div>
                 <label>Net Income Amount:</label>
                 <input
-                    type="number"
-                    value={netIncomeAmount}
+                    type="text"
+                    value={NetIncomeAmount}
                     onChange={(e) => setNetIncomeAmount(e.target.value)}
                     placeholder="Net Income Amount"
                     min="0"
                 />
             </div>
             <button type="submit">Add Customer</button>
-            {message && <p>{message}</p>} {/* Mesajı göster */}
+            {message && <p>{message}</p>}
         </form>
     );
 };

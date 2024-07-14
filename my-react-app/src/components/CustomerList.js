@@ -1,4 +1,4 @@
-﻿import React, { useState, useEffect } from 'react';
+﻿{/*import React, { useState, useEffect } from 'react';
 
 const CustomerList = () => {
     const [customers, setCustomers] = useState([]);
@@ -22,4 +22,4 @@ const CustomerList = () => {
     );
 };
 
-export default CustomerList;
+export default CustomerList;*/}

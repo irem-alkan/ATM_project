@@ -7,7 +7,7 @@ namespace ATMWithdrawalApi.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int JobId { get; set; }
+        public int Id { get; set; }
 
         public string? CompanyName { get; set; }
 
@@ -24,7 +24,7 @@ namespace ATMWithdrawalApi.Models
 
         
         [ForeignKey("Customer")]
-        public long ID_Customer { get; set; }
+        public int CustomerId { get; set; }
 
         public virtual Customer? Customer { get; set; }
     }
