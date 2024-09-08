@@ -12,7 +12,7 @@ namespace ATMWithdrawalApi.Models
 
         [Required(ErrorMessage = "Customer Type is required")]
         public string CustomerType { get; set; } = string.Empty;
-        
+
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; } = string.Empty;
 
@@ -21,9 +21,15 @@ namespace ATMWithdrawalApi.Models
 
         public decimal? NetIncomeAmount { get; set; }
 
-        //public ICollection<Accounts>? Accounts { get; set; }
-       //public ICollection<DebtPayments>? DebtPayments { get; set; }
-       // public ICollection<CustomerJob> CustomerJobs { get; set; }
-        //public ICollection<CustomerRelation>? CustomerRelations { get; set; }
+        [Required(ErrorMessage = "TC is required")]
+        public string TC { get; set; }
+
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        public string Email { get; set; }
+
+        // Navigation properties
+        public ICollection<CustomerJobs> CustomerJobs { get; set; } = new List<CustomerJobs>();
+        public ICollection<CustomerRelations> CustomerRelations { get; set; } = new List<CustomerRelations>();
     }
 }

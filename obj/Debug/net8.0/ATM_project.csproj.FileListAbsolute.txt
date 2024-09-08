@@ -1,8 +1,5 @@
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\appsettings.json
-C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\package-lock.json
-C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\package.json
-C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\my-react-app\public\manifest.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\ATM_project.staticwebassets.runtime.json
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\ATM_project.exe
 C:\Users\alkan\source\repos\ATM_project\bin\Debug\net8.0\ATM_project.deps.json

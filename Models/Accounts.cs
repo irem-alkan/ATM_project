@@ -7,13 +7,13 @@ namespace ATMWithdrawalApi.Models
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public long ID_Account { get; set; } 
+        public int Id { get; set; } 
 
         [Required]
         public int Balance { get; set; }
 
         [ForeignKey("Customer")]
-        public long ID_Customer { get; set; }
+        public long CustomerId { get; set; }
 
         public virtual Customer? Customer { get; set; }
     }

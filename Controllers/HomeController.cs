@@ -10,7 +10,7 @@ namespace ATM_project.Controllers
         [HttpGet]
         public IActionResult Index()
         {
-            // client-app/build/index.html dosyasının yolunu alır
+           
             var filePath = Path.Combine(Directory.GetCurrentDirectory(), "client-app", "build", "index.html");
 
             if (System.IO.File.Exists(filePath))

@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace ATMWithdrawalApi.Models
 {
-    public class CustomerJob
+    public class CustomerJobs
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
@@ -23,9 +23,9 @@ namespace ATMWithdrawalApi.Models
         public decimal Salary { get; set; }
 
         
-        [ForeignKey("Customer")]
+        [ForeignKey("Customers")]
         public int CustomerId { get; set; }
 
-        public virtual Customer? Customer { get; set; }
+        public virtual Customer? Customers { get; set; }
     }
 }

@@ -10,7 +10,7 @@ namespace ATMWithdrawalApi.Models
         public int PaymentId { get; set; }
 
         [Required]
-        public decimal Amount { get; set; }
+        public decimal amount { get; set; }
         public string? Description { get; set; }
 
        
